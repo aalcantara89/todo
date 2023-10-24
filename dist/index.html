@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+    <div id="top-bar"><h1>Todo List<button id="addTask">+</button></h1></div>
+    <div id="app-holder">
+        <div id="left-menu">
+            <div id="top-half">
+                <ul>
+                    <li>Today</li>
+                </ul>
+            </div>
+            <div id="bottom-half">
+                <div id="project-text">
+                    <ul>
+                        <li>Projects</li>
+                    </ul>
+                </div>
+                <div id="project-buttons">
+                    <div id="newProjectBtn"><button>+</button></div>
+                    <div id="projects-list-button"><button><span id="projectBtnTxt"><</span></span></button></div>
+                </div>
+            </div>
+            <div id="projects-list"></div>
+        </div>
+        <div id="main">
+            <div id="taskCard">
+                <form id="task-form">
+                    <button id="close-task">X</button>
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" placeholder="Enter project name">
+                    <label for="task-box">Task</label>
+                    <input type="text" placeholder="Task Name" name="task" id="task-box">
+                    <label for="description-box">Description</label>
+                    <input type="text" placeholder="Description" name="description" id="description-box">
+                    <label for="dueDate-box">Due Date</label>
+                    <input type="date" name="dueDate" id="dueDate-box" min="2023-01-01" max="2023-12-31">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority">
+                        <option value="Priority 1">Priority 1</option>
+                        <option value="Priority 2">Priority 2</option>
+                        <option value="Priority 3">Priority 3</option>
+                        <option value="Priority 4">Priority 4</option>
+                    </select>
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                    <button id="submitTask" type="submit">Submit</button>
+                </form>
+            </div>
+            <div id="projectData"></div>
+        </div>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
